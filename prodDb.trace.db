@@ -1,0 +1,18 @@
+2020-07-28 11:35:25 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "ROLE" not found; SQL statement:
+select this_.id as id1_0_0_, this_.version as version2_0_0_, this_.authority as authorit3_0_0_ from role this_ where (this_.authority=?) limit ? [42102-195]
+2020-07-28 11:38:43 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "ROLE" not found; SQL statement:
+select this_.id as id1_0_0_, this_.version as version2_0_0_, this_.authority as authorit3_0_0_ from role this_ where (this_.authority=?) limit ? [42102-195]
+2020-07-28 11:41:26 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "ROLE" not found; SQL statement:
+select this_.id as id1_0_0_, this_.version as version2_0_0_, this_.authority as authorit3_0_0_ from role this_ where (this_.authority=?) limit ? [42102-195]
+2020-07-28 11:42:53 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "ROLE" not found; SQL statement:
+select this_.id as id1_0_0_, this_.version as version2_0_0_, this_.authority as authorit3_0_0_ from role this_ where (this_.authority=?) limit ? [42102-195]
+2020-07-28 11:43:41 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "ROLE" not found; SQL statement:
+select this_.id as id1_0_0_, this_.version as version2_0_0_, this_.authority as authorit3_0_0_ from role this_ where (this_.authority=?) limit ? [42102-195]
+2020-07-28 11:44:11 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "ROLE" not found; SQL statement:
+select this_.id as id1_0_0_, this_.version as version2_0_0_, this_.authority as authorit3_0_0_ from role this_ where (this_.authority=?) limit ? [42102-195]
