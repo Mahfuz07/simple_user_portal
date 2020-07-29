@@ -68,14 +68,21 @@
             </thead>
         <tbody>
             <g:each  in="${userList}" status="i" var="users">
-                <tr>
-                    <td>${users.firstName} ${users.lastName}</td>
-                    <td><g:formatDate date="${users.birthday}" type="date" style="MEDIUM"/></td>
-                    <td>${users.email}</td>
-                    <td>${users.phone}</td>
-                </tr>
 
-                </tbody>
+                <g:if test='${userList == null}'>
+                    <div class="alert alert-danger" role="alert">
+                        <h3>No Data Found</h3>
+                    </div>
+                </g:if>
+                <g:else>
+                    <tr>
+                        <td>${users.firstName} ${users.lastName}</td>
+                        <td><g:formatDate date="${users.birthday}" type="date" style="MEDIUM"/></td>
+                        <td>${users.email}</td>
+                        <td>${users.phone}</td>
+                    </tr>
+                    </tbody>
+                </g:else>
             </g:each>
         </table>
 %{--        <div class="pagination">--}%

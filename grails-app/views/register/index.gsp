@@ -1,6 +1,9 @@
 <html>
 <head>
     <meta name="layout" content="${gspLayout ?: 'main'}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <asset:stylesheet src="application.css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <title>Register</title>
 </head>
 
@@ -55,6 +58,9 @@
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" placeholder="Your Email" required="required" class="form-control" name="email" id="email" autocapitalize="none" property="email" bean="user"/>
+
+                        <span id="availability" ></span>
+
                     </div>
 
 %{--                    <div class="form-group">--}%
@@ -111,6 +117,35 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+
+    $(document).ready(function (){
+        $("#email").blur(function () {
+
+            var email = $('#email').val();
+            $.ajax({
+
+                url: "/register/emailcheck",
+                method: "POST",
+                data: {emaill : email},
+                datatype: "text",
+                success:function (data) {
+                   // $('#availability').html(data);
+                   if(data === true){
+                       $('#availability').html("<label class='text-danger'>Email Already Exist<label>");
+                   }else{
+                       $('#availability').html("<label class='text-success'>Email available!<label>");
+                   }
+                }
+            })
+        });
+
+    });
+
+
+</script>
+
+
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function(event) {
         document.forms['loginForm'].elements['email'].focus();

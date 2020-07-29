@@ -12,9 +12,9 @@ import java.time.Period
 class UserService {
 
 
-    List<User> age (){
-
-    }
+   User findByEmailIgnoreCase(String email){
+     return   User.findByEmail(email)
+   }
 
 
     def serviceMethod() {

@@ -48,8 +48,8 @@
               <th> ${user.email}</th>
           </tr>
           <tr>
-              <th>Birthday </th>
-              <th > <g:formatDate date="${user.birthday}" type="date" style="MEDIUM"/></th>
+              <th>Age </th>
+              <th > ${userage}</th>
           </tr>
       </table>
 

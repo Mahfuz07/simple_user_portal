@@ -101,7 +101,7 @@ dataSource:
 environments:
     development:
         dataSource:
-            dbCreate: create
+            dbCreate: update
             username: root
             password: root
             url: jdbc:mysql://localhost:3306/simple_user_portal

@@ -11,6 +11,7 @@ class UrlMappings {
 
         "/"(controller:"profile",action:"index")
         "/admin"(controller:"admin",action:"index")
+        //"/register"(controller:"register",action:"emailcheck")
         "/search"(controller:"admin",action:"query")
         "/login"(controller: 'login', action: 'auth')
         "500"(view:'/error')

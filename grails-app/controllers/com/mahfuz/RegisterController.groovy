@@ -1,5 +1,6 @@
 package com.mahfuz
 
+import grails.converters.JSON
 import grails.gorm.transactions.Transactional
 import grails.plugin.springsecurity.annotation.Secured
 import grails.validation.ValidationException
@@ -11,8 +12,33 @@ import java.text.SimpleDateFormat
 class RegisterController {
 
     def springSecurityService
+    UserService userService
 
-    static allowedMethods = [register: "POST"]
+    static allowedMethods = [register: "POST", emailcheck: "POST"]
+
+
+    def emailcheck() throws Exception{
+
+        String paramEmail = params.emaill
+
+        String availability
+        try{
+            def email=  userService.findByEmailIgnoreCase(paramEmail)
+            String name =  email.email.toString()
+            if(name == paramEmail){
+               availability = true
+            }
+        }catch(Exception e){
+            availability = false
+            System.out.println(e)
+        }
+
+        response.setContentType("text/json;charset=UTF-8");
+        render availability
+    }
+
+
+
 
     def index() {
         respond new User(params)
